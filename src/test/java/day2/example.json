@@ -1,0 +1,15 @@
+{
+  "codewise" : {
+    "students" : {
+      "student": {
+        "name" : "John",
+        "address": "Chicago"
+      },
+      "student": {
+        "name" : "Doe",
+        "address": "SF"
+      }
+    }
+
+  }
+}

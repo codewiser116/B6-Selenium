@@ -1,0 +1,32 @@
+<codewise>
+
+    <students>
+        <student>
+            <name age="18">Mahabat
+                <java>5
+                    <oop>10
+                        <inheritance class="test">9</inheritance>
+                        <inheritance class="test">9</inheritance>
+                        <inheritance class="test">9</inheritance>
+                        <inheritance class="test">9</inheritance>
+                        <inheritance class="test">9</inheritance>
+                        <inheritance class="test">9</inheritance>
+                    </oop>
+                </java>
+            </name>
+            <address>Chicago</address>
+            <batch>5</batch>
+        </student>
+
+        <student>
+            <name age="9">David</name>
+            <address>LA</address>
+            <batch>5</batch>
+        </student>
+    </students>
+
+    <teachers>
+
+    </teachers>
+
+</codewise>
