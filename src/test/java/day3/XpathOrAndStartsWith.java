@@ -50,8 +50,20 @@ public class XpathOrAndStartsWith {
         WebElement dateTpSelect = driver.findElement(By.xpath("//div[@aria-label='Choose Wednesday, March 6th, 2024']"));
         dateTpSelect.click();
 
+        Thread.sleep(1000);
+
         WebElement subject = driver.findElement(By.xpath("//input[@id='subjectsInput']"));
+        subject.click();
+        subject.sendKeys("Eng");
+        Thread.sleep(2000);
+
+        WebElement english = driver.findElement(By.xpath("//div[text()='English']"));
+        english.click();
+
         WebElement musicCheckbox = driver.findElement(By.xpath("//input[@id='hobbies-checkbox-3']"));
+        musicCheckbox.click();
+
+        //
 
 
 
