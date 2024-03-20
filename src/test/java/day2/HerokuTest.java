@@ -34,5 +34,38 @@ public class HerokuTest {
         WebElement checkboxes1 = driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
         checkboxes1.click();
 
+
+
+        String price1 = "$15.99";
+
+        double price2 = 15.99;
+
+        //get rid of dollar sign
+        price1 = price1.substring(1); //15.99
+
+        double actualPrice = Double.parseDouble(price1);
+
+        if (actualPrice == price2){
+            System.out.println("PASS");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
