@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import utils.Driver;
 
 public class PracticeCSS {
     public static void main(String[] args) throws InterruptedException {
@@ -13,7 +14,7 @@ public class PracticeCSS {
          * 2. fill out the form using CSS
          */
 
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = Driver.getDriver();
         driver.get("https://www.techlistic.com/p/selenium-practice-form.html");
 
         WebElement firstName = driver.findElement(By.cssSelector("input[name=firstname]"));
