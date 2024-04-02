@@ -1,5 +1,6 @@
 package day5;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -51,22 +52,23 @@ public class OrangeHRMTest {
 
         String url = driver.getCurrentUrl();
         System.out.println(url);
-        if (url.contains("admin")){
-            System.out.println("Confirm");
-        }
-        else
-            System.out.println("Fail");
+
+        Assert.assertTrue(url.contains("admin"));
+
+//        if (url.contains("admin")){
+//            System.out.println("Confirm");
+//        }
+//        else
+//            System.out.println("Fail");
 
         WebElement myInfo = driver.findElement(By.linkText("My Info"));
         myInfo.click();
 
         String url1 = driver.getCurrentUrl();
         System.out.println(url1);
-        if (url1.contains("viewPersonalDetails")){
-            System.out.println("Confirm");
-        }
-        else
-            System.out.println("Fail");
+
+        Assert.assertTrue(url1.contains("viewPersonalDetails"));
+
         Thread.sleep(5000);
 
         WebElement pim = driver.findElement(By.linkText("PIM"));
