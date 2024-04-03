@@ -2,10 +2,13 @@ package utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Driver {
 
@@ -22,7 +25,15 @@ public class Driver {
 
         switch (browser){
             case "chrome":
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("disable-popup-blocking");
+
+                // Use preferences to disable geolocation permission prompt
+                Map<String, Object> prefs = new HashMap<String, Object>();
+                prefs.put("profile.default_content_setting_values.geolocation", 2); // 2 means Block
+                options.setExperimentalOption("prefs", prefs);
+
+                driver = new ChromeDriver(options);
                 break;
             case "firefox":
                 driver = new FirefoxDriver();
@@ -34,10 +45,10 @@ public class Driver {
                 driver = new ChromeDriver();
         }
 
-
         // these are implicit waits applied to the driver
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().window().fullscreen();
 
         return driver;
 

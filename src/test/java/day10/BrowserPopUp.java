@@ -21,14 +21,13 @@ public class BrowserPopUp {
         options.addArguments("disable-popup-blocking");
         options.addArguments("start-maximized");
         options.addArguments("incognito");
-        options.addArguments("disable-geolocation");
 
         // Use preferences to disable geolocation permission prompt
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values.geolocation", 2); // 2 means Block
         options.setExperimentalOption("prefs", prefs);
 
-        ChromeDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver(options);
 
         driver.get("https://www.google.com/");
 
