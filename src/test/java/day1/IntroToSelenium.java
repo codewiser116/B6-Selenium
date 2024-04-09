@@ -1,9 +1,11 @@
 package day1;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utils.Driver;
 
 public class IntroToSelenium {
     public static void main(String[] args) throws InterruptedException {
@@ -34,6 +36,9 @@ public class IntroToSelenium {
         // add bike light and t-shirt
 
 
-
+    }
+    @Test
+    public void initTest(){
+        Driver.getDriver().get("http://demo.guru99.com");
     }
 }
